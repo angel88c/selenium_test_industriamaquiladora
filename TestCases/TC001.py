@@ -37,6 +37,8 @@ class TC001():
         
         self.class_for_item_row_key = MyLocators.class_for_item_row_key
         self.class_for_item_row_value = MyLocators.class_for_item_row_value
+        self.identifier_for_div_container = MyLocators.identifier_for_div_container
+        self.identifier_for_sub_div_container = MyLocators.identifier_for_sub_div_container
 
     def start(self):
         global i
@@ -93,15 +95,15 @@ class TC001():
         valid_suppliers_counter = 0
         for iterator in range(len(web_elements)-1):
             
-            web_elements = self.driver.find_elements(By.CLASS_NAME, "raya")
+            web_elements = self.driver.find_elements(By.CLASS_NAME, self.identifier_for_div_container)
             web_elements[iterator].click()
             
-            sub_elements = self.driver.find_elements(By.CLASS_NAME, "raya")
+            sub_elements = self.driver.find_elements(By.CLASS_NAME, self.identifier_for_sub_div_container)
             
             if len(sub_elements) >= 3:
                 #i = 0
                 for i in range (len(sub_elements) - 1):
-                    sub_elements = self.driver.find_elements(By.CLASS_NAME, "raya")
+                    sub_elements = self.driver.find_elements(By.CLASS_NAME, self.identifier_for_div_container)
                     print("**", sub_elements[i])
                     sub_elements[i].click()
               

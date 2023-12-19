@@ -20,4 +20,8 @@ class MyLocators():
     name_user_name = "user-name"
     name_user_password = "password"
     
+    identifier_for_div_container = "raya"
+    identifier_for_sub_div_container = "raya"
+    
+    
     
